@@ -35,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Checks to see if a menu item has been clicked
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -42,11 +47,12 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        //If the selection made was one of the menu items then return true
+        if (id == R.id.menu_refresh || id == R.id.menu_delete_all || id == R.id.menu_quit) {
             return true;
         }
 
+        //If no menu options were selected then pass the item on to the parent
         return super.onOptionsItemSelected(item);
     }
 }
